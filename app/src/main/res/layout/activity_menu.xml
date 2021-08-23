@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Menu"
+    android:id="@+id/clMenu">
+
+    <TextView
+        android:id="@+id/tvChoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="PILIH LAWANMU"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:textSize="24sp"
+        android:layout_marginTop="80dp"
+        android:textColor="@color/black"
+        />
+
+    <ImageView
+        android:id="@+id/ivVersusPlayer"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/landing_page1"
+        app:layout_constraintTop_toBottomOf="@id/tvChoice"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/tvVersusPlayer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/ivVersusPlayer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        />
+
+    <ImageView
+        android:id="@+id/ivVersusCPU"
+        android:layout_width="140dp"
+        android:layout_height="140dp"
+        android:src="@drawable/landing_page2"
+        app:layout_constraintTop_toBottomOf="@id/tvVersusPlayer"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="50dp"
+        android:clickable="true"
+        />
+
+    <TextView
+        android:id="@+id/tvVersusCPU"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        android:textColor="@color/black"
+        android:textSize="20sp"
+        app:layout_constraintTop_toBottomOf="@id/ivVersusCPU"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="30dp"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

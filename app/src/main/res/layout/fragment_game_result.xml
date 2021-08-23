@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_round"
+    android:backgroundTint="@color/white">
+
+    <ImageView
+        android:id="@+id/ivResultPlaceholder"
+        android:layout_width="250dp"
+        android:layout_height="280dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/bg_round"
+        android:backgroundTint="@color/white"/>
+
+    <TextView
+        android:id="@+id/tvTextHasil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        android:text="Hasil Permainan"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="24sp"
+        app:layout_constraintLeft_toLeftOf="@id/ivResultPlaceholder"
+        app:layout_constraintRight_toRightOf="@id/ivResultPlaceholder"
+        app:layout_constraintTop_toTopOf="@id/ivResultPlaceholder" />
+
+    <TextView
+        android:id="@+id/tvWinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        android:text="Pemain 1 \nMENANG!"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="28sp"
+        app:layout_constraintLeft_toLeftOf="@id/ivResultPlaceholder"
+        app:layout_constraintRight_toRightOf="@id/ivResultPlaceholder"
+        app:layout_constraintTop_toBottomOf="@id/tvTextHasil" />
+
+    <Button
+        android:id="@+id/btnRestart"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round"
+        app:backgroundTint="@color/purple_batu"
+        android:textColor="@color/white"
+        android:text="Main Lagi"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        app:layout_constraintTop_toBottomOf="@id/tvWinner"
+        app:layout_constraintLeft_toLeftOf="@id/ivResultPlaceholder"
+        app:layout_constraintRight_toRightOf="@id/ivResultPlaceholder"
+        android:layout_marginTop="20dp"
+        android:clickable="true"
+        />
+
+    <Button
+        android:id="@+id/btnMenu"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/bg_round"
+        app:backgroundTint="@color/orange"
+        android:textColor="@color/black"
+        android:text="Kembali Ke Menu"
+        android:fontFamily="@font/qdbettercomicsans_jeeeg"
+        app:layout_constraintTop_toBottomOf="@id/btnRestart"
+        app:layout_constraintLeft_toLeftOf="@id/ivResultPlaceholder"
+        app:layout_constraintRight_toRightOf="@id/ivResultPlaceholder"
+        android:layout_marginTop="10dp"
+        android:clickable="true"
+        />
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
