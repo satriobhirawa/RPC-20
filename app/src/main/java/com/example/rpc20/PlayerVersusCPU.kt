@@ -8,18 +8,16 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.content.ContextCompat
 
 class PlayerVersusCPU : AppCompatActivity(), Callback {
     private var playerName = ""
     private val controller = GameLogicController(this)
-    private val comChoiceKertas by lazy {findViewById<ImageView>(R.id.ivPlayerTwoKertas)}
-    private val comChoiceGunting by lazy {findViewById<ImageView>(R.id.ivPlayerTwoGunting)}
-    private val comChoiceBatu by lazy {findViewById<ImageView>(R.id.ivPlayerTwoBatu)}
+    private val comChoiceKertas by lazy { findViewById<ImageView>(R.id.ivPlayerTwoKertas) }
+    private val comChoiceGunting by lazy { findViewById<ImageView>(R.id.ivPlayerTwoGunting) }
+    private val comChoiceBatu by lazy { findViewById<ImageView>(R.id.ivPlayerTwoBatu) }
     private val btnRestart by lazy { findViewById<ImageView>(R.id.ivRefresh) }
     private val btnClose by lazy { findViewById<ImageView>(R.id.ivClose) }
     private var isFinished: Boolean = false
-
     private var comPick: String = ""
     private var playerPick: String = ""
 
@@ -30,17 +28,19 @@ class PlayerVersusCPU : AppCompatActivity(), Callback {
 
 
         val playerChoiceList =
-            mutableMapOf(R.id.ivPlayerOneBatu to "playerOneBatu",R.id.ivPlayerOneGunting to "playerOneGunting",
-                R.id.ivPlayerOneKertas to "playerOneKertas")
+            mutableMapOf(
+                R.id.ivPlayerOneBatu to "playerOneBatu",
+                R.id.ivPlayerOneGunting to "playerOneGunting",
+                R.id.ivPlayerOneKertas to "playerOneKertas"
+            )
         playerName = intent.getStringExtra("Player")!!
-        findViewById<TextView>(R.id.tvPlayerOne) .text = playerName
-
+        findViewById<TextView>(R.id.tvPlayerOne).text = playerName
 
         btnClose.setOnClickListener { finish() }
         btnRestart.setOnClickListener { restart() }
 
         //TODO isClickable
-        playerChoiceList.forEach { (idx,value) ->
+        playerChoiceList.forEach { (idx, value) ->
             run {
                 findViewById<ImageView>(idx).setOnClickListener {
                     if (!isFinished) {

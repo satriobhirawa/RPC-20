@@ -53,7 +53,7 @@ class Menu : AppCompatActivity() {
         playerVersusPlayer.setOnClickListener {
             val intent = Intent(this, PlayerVersusPlayer::class.java)
             intent.putExtra("Player", player.name)
-            startActivity( Intent(this, PlayerVersusPlayer::class.java))
+            startActivity( intent)
         }
 
         playerVersusCPU.setOnClickListener {

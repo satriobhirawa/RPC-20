@@ -14,7 +14,7 @@ import androidx.fragment.app.FragmentActivity
 import androidx.viewpager2.adapter.FragmentStateAdapter
 import androidx.viewpager2.widget.ViewPager2
 import com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 
 class OnBoardPagesActivity : AppCompatActivity() {
     private lateinit var viewPagerTwo: ViewPager2
@@ -30,8 +30,7 @@ class OnBoardPagesActivity : AppCompatActivity() {
         btnArrowNext = getView(R.id.ivArrowNext)
         val dotsIndicator = getView<SpringDotsIndicator>(R.id.indicator)
         var playerName = ""
-        val pageThree = PageThree()
-        pageThree.listener.observe(this,{
+        (pageFragments.last() as PageThree).listener.observe(this,{
             playerName = it
         })
 
@@ -44,7 +43,7 @@ class OnBoardPagesActivity : AppCompatActivity() {
 
             //TODO next arrow before last fragment
             val player = Player(playerName)
-            val intent = Intent(this, Menu()::class.java)
+            val intent = Intent(this,Menu::class.java)
             intent.putExtra("Player", player)
             startActivity(intent)
         }
