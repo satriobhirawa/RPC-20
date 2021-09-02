@@ -1,11 +1,13 @@
 package com.example.rpc20
 
 import android.content.Intent
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Parcelable
 import android.view.View
 import android.widget.ImageView
+import androidx.annotation.RequiresApi
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentActivity
@@ -17,7 +19,6 @@ import kotlinx.android.parcel.Parcelize
 class OnBoardPagesActivity : AppCompatActivity() {
     private lateinit var viewPagerTwo: ViewPager2
     private lateinit var btnArrowNext: ImageView
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +40,7 @@ class OnBoardPagesActivity : AppCompatActivity() {
         dotsIndicator.setViewPager2(viewPagerTwo)
 
         btnArrowNext.setOnClickListener{
-            it.backgroundTintList = ContextCompat.getColorStateList(this, R.color.indicator_selected)
+            it.setBackgroundResource(R.color.indicator_selected)
 
             //TODO next arrow before last fragment
             val player = Player(playerName)
@@ -56,7 +57,6 @@ class OnBoardPagesActivity : AppCompatActivity() {
         override fun getItemCount(): Int = pageFragmentsParam.size
         override fun createFragment(position: Int): Fragment = pageFragmentsParam[position]
     }
-
 
 
 }

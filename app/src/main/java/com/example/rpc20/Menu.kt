@@ -23,13 +23,15 @@ class Menu : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_menu)
 
-        player = intent.getParcelableExtra<Player>("Player") as Player
-        val textOne = findViewById<TextView>(R.id.tvVersusPlayer)
-        val textTwo = findViewById<TextView>(R.id.tvVersusCPU)
+        // player = intent.getParcelableExtra<Player>("Player") as Player
+         player = intent.getParcelableExtra<Player>("Player") as Player
+
+        /*val textOne = findViewById<TextView>(R.id.tvVersusPlayer)
+        val textTwo = findViewById<TextView>(R.id.tvVersusCPU)*/
         val textVersusPlayer = "${player.name} VS Pemain"
         val textVersusCPU = "${player.name} VS CPU"
-        textOne.text = textVersusPlayer
-        textTwo.text = textVersusCPU
+        findViewById<TextView>(R.id.tvVersusPlayer).text = textVersusPlayer
+        findViewById<TextView>(R.id.tvVersusCPU).text = textVersusCPU
 
         val snackbar = Snackbar.make(
             findViewById(R.id.clMenu), "Selamat datang ${player.name}",

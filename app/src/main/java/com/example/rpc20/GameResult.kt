@@ -4,12 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.TextView
 import androidx.fragment.app.DialogFragment
 
 
 class GameResult : DialogFragment() {
 
-    private var playerName: String? = null
+    private var playerName: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -25,6 +26,14 @@ class GameResult : DialogFragment() {
             ViewGroup.LayoutParams.WRAP_CONTENT,
             ViewGroup.LayoutParams.WRAP_CONTENT
         )
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        view.findViewById<TextView>(R.id.tvWinner).text = playerName
+        view.findViewById<TextView>(R.id.btnMenu).setOnClickListener { activity?.finish() }
+        view.findViewById<TextView>(R.id.btnRestart).setOnClickListener { dialog?.dismiss() }
     }
 
     companion object {
